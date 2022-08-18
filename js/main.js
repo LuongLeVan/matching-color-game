@@ -106,14 +106,14 @@ function handleTiming(){
            
         }
         if(seconds > 0 && document.querySelectorAll('#colorList > li:not(.active)').length === 0  ){
-            var output = 'You Win!'
+            var output = 'You Win 🤩'
             getTimeElement.textContent = output
             gameStatus = GAME_STATUS.BLOCKING
             
         }
         if(seconds <= 0 && document.querySelectorAll('#colorList > li:not(.active)').length !== 0)
         {
-            var output = 'Game Over!'
+            var output = 'Game Over 😭'
             getTimeElement.textContent = output
             gameStatus = GAME_STATUS.BLOCKING
 
