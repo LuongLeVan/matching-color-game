@@ -1,90 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Color Matching Game</title>
-
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/game.css">
-
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Matching Game</title>
+    <link rel="stylesheet" href="./css/game.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./images/matching.jpg">
+</head>
+<style>
+    body{
+        background: url(./images/background.png);
+        background-repeat: no-repeat;
+        background-size:cover;
+        height: 100vh;
+        
+    }
+</style>
+<body>
+    <div class="parent">
+        <div class="container">
+            <h1 class="game__title">Game : Color Matching</h1> <br>
+            <div class="description" >Rule : in 30 seconds flip 8 pairs of the same color, you will win</div>
+                <button id="buttonplay" class="game__button show"><a class="btn-access" href="./main.html">Play Game</a></button>
+        </div>
 
-  </head>
-  <body>
-    
-  <section class="color-background">
-    <div class="game">
-      <h1 class="game__title">Color Matching</h1>
-      <p class="game__timer"></p>
-      <p class="game__win"></p>
-      <div class="game__button-wrapper ">
-        <button class="game__button">Play Again</button>
-      </div>
-
-      <div class="game__board">
-        <ul id="colorList" class="color-list">
-          <li>
-            <div class="overlay"></div>
-          </li>
-          <li>
-            <div class="overlay"></div>
-          </li>
-          <li>
-            <div class="overlay"></div>
-          </li>
-          <li>
-            <div class="overlay"></div>
-          </li>
-          <li>
-            <div class="overlay"></div>
-          </li>
-          <li>
-            <div class="overlay"></div>
-          </li>
-          <li>
-            <div class="overlay"></div>
-          </li>
-          <li>
-            <div class="overlay"></div>
-          </li>
-          <li>
-            <div class="overlay"></div>
-          </li>
-          <li>
-            <div class="overlay"></div>
-          </li>
-          <li>
-            <div class="overlay"></div>
-          </li>
-          <li>
-            <div class="overlay"></div>
-          </li>
-          <li>
-            <div class="overlay"></div>
-          </li>
-          <li>
-            <div class="overlay"></div>
-          </li>
-          <li>
-            <div class="overlay"></div>
-          </li>
-          <li>
-            <div class="overlay"></div>
-          </li>
-        </ul>
-      </div>
     </div>
-  </section>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.6.1/randomColor.min.js"
-    integrity="sha512-vPeZ7JCboHcfpqSx5ZD+/jpEhS4JpXxfz9orSvAPPj0EKUVShU2tgy7XkU+oujBJKnWmu4hU7r9MMQNWPfXsYw=="
-    crossorigin="anonymous"></script>
-  <script type="module" src="./js/main.js"></script>
 </body>
-<!-- <audio src="./music/song4.mp3" autoplay></audio>
- -->
 </html>

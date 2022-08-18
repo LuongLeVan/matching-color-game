@@ -13,8 +13,9 @@ let gameStatus = GAME_STATUS.PLAYING
 // 4. Add timer
 // 5. Handle replay click
 function handleClick(liElement) {
+    const getAllLiElement = getColorElementList()
     const shouldBlockElement = [GAME_STATUS.BLOCKING, GAME_STATUS.FINISHED].includes(gameStatus)
-    if(!liElement || shouldBlockElement) return 
+    if(!liElement || shouldBlockElement ) return 
 
     liElement.classList.add('active')
 
@@ -26,12 +27,25 @@ function handleClick(liElement) {
     const second = selections[1].dataset.color
     const isMatch = first === second
 
+    
+    //handle event double click
+    if(getAllLiElement[first] === getAllLiElement[second]) {
+      
+       
+    }
     if(isMatch){
         //check win
-        selections.forEach(selection =>{
-            selection.addEventListener('click', ()=>{
-                return
-            })
+        selections[0].dataset.match = 'match'
+        selections[1].dataset.match = 'match'
+        const getAllLiElement = getColorElementList()
+        getAllLiElement.forEach(element => {
+            if (element.getAttribute('data-match')) {
+                element.addEventListener('click', (e)=>{
+                   e.stopPropagation()
+                   e.stopImmediatePropagation()
+                   e.preventDefault()
+                })
+            }
         })
         const isWin = getInActiveColorList()
         const showElement = getTimerElement()
@@ -58,13 +72,15 @@ function handleClick(liElement) {
         selections = []
         gameStatus = GAME_STATUS.PLAYING
     }, 1000);
+
+   
 }
 
 
 //hanlde click event button replay 
 function handleClickEventButton(){
     const buttonReplay = getPlayAgainButton()
-    buttonReplay.addEventListener('click', ()=>{
+    buttonReplay.addEventListener('click', (e)=>{
         window.location.href = ''
     })
 
@@ -79,26 +95,27 @@ function handleTiming(){
     
         if(seconds < 10 ) seconds = `0${seconds}`
         if(seconds > 0 && document.querySelectorAll('#colorList > li:not(.active)').length !== 0){
-             var output = `Time remaining : ${seconds}s `
+             var output = `Time Remaining : ${seconds}s `
             getTimeElement.textContent = output
         }
 
        if(seconds == 0) {
             const buttonPlay = getPlayAgainButton()
             buttonPlay.classList.add('show')
+            gameStatus = GAME_STATUS.BLOCKING
            
         }
         if(seconds > 0 && document.querySelectorAll('#colorList > li:not(.active)').length === 0  ){
             var output = 'You Win!'
             getTimeElement.textContent = output
-            gameStatus = GAME_STATUS.FINISHED
+            gameStatus = GAME_STATUS.BLOCKING
             
         }
         if(seconds <= 0 && document.querySelectorAll('#colorList > li:not(.active)').length !== 0)
         {
             var output = 'Game Over!'
             getTimeElement.textContent = output
-            gameStatus = GAME_STATUS.FINISHED
+            gameStatus = GAME_STATUS.BLOCKING
 
         }
 

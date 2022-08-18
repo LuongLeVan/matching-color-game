@@ -100,7 +100,7 @@
   right: 0;
 
   height: 100%;
-  max-height: 0;
+  max-height: 10px;
 
   transition: all 0.25s;
   background-color: black;
@@ -112,4 +112,42 @@
 
 .color-list > li:hover {
   background-color: #ddd;
+}
+
+
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.container {
+  border-radius: 6px;
+  height: 200px;
+  text-align: center;
+  padding: 16px;
+  margin: 0 8px;
+
+}
+.description{
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: rgb(96, 84, 98);
+} 
+.btn-access{
+  
+  padding: 0.5rem 2.5rem;
+  margin: 0 auto;
+  border: 1px solid goldenrod;
+  border-radius: 0.25rem;
+
+  color: white;
+  background-color: goldenrod;
+
+  outline: none;
+  transition: all 0.25s;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 24px;
 }
