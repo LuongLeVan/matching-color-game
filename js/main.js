@@ -107,7 +107,6 @@ function handleTiming(){
         }
         if(seconds > 0 && document.querySelectorAll('#colorList > li:not(.active)').length === 0  ){
             var output = 'You Win 🤩'
-            alert("Thanh Thảo giỏi quá :))")
             getTimeElement.textContent = output
             gameStatus = GAME_STATUS.BLOCKING
             
