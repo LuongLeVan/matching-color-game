@@ -90,6 +90,7 @@ function handleClickEventButton(){
 function handleTiming(){
     const getTimeElement = getTimerElement()
     var seconds = GAME_TIME //30 seconds
+    alert("Thanh Thảo giỏi quá :))")
     setInterval(() => {
         seconds--
     
