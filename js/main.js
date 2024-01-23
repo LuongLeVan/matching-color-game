@@ -90,7 +90,6 @@ function handleClickEventButton(){
 function handleTiming(){
     const getTimeElement = getTimerElement()
     var seconds = GAME_TIME //30 seconds
-    alert("Thanh Thảo giỏi quá :))")
     setInterval(() => {
         seconds--
     
@@ -108,6 +107,7 @@ function handleTiming(){
         }
         if(seconds > 0 && document.querySelectorAll('#colorList > li:not(.active)').length === 0  ){
             var output = 'You Win 🤩'
+            alert("Thanh Thảo giỏi quá :))")
             getTimeElement.textContent = output
             gameStatus = GAME_STATUS.BLOCKING
             
